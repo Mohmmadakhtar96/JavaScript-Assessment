@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <h1>Form Data</h1>
+    </head>
+
+    <body>
+<h2> The inputted information from the previous page was:</h2>
+<script>
+//localStorage.setItem("element1", Name);
+//localStorage.setItem('element2', dob);
+//localStorage.setItem("element3", address);
+//localStorage.setItem('element4', pcode);
+//localStorage.setItem('element5', email);
+
+var hum = localStorage.getItem("name");
+var dat = localStorage.getItem("dob");
+var AdD = localStorage.getItem("address");
+var pos = localStorage.getItem("pcode");
+var mail = localStorage.getItem("email");
+
+
+	document.write("Name: ");
+	document.write(hum); 
+	document.write("<br>");
+	document.write("DOB: ");
+  document.write(dat); 
+  document.write("<br>");
+  document.write("Address: ");
+  document.write(AdD);
+  document.write("<br>");
+  document.write("PostCode: ");
+  document.write(pos);
+  document.write("<br>");
+  document.write("Email: ");
+  document.write(mail);
+</script>
+
+
+
+
+
+    </body>
+    </html>

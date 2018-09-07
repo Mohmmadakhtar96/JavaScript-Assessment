@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h1> Trainer Search </h1>
+  </head>
+
+  <body>
+    <script>
+    function Validationn(){
+    var elementname = document.getElementById("name");
+      var Name = /^[a-zA-Z]+$/;
+
+      if (elementname.value == ""){
+      alert("Name is Empty").focus();
+      return false;
+      }
+      if (!(elementname.value.match(Name))){
+      alert("Enter a valid name");
+      return false;
+      }
+    }
+  </script>
+  <script>
+    var src = "data.js"
+
+      var request = new XMLHttpRequest();
+
+request.open('GET', src);
+
+request.responseType = 'json'
+
+request.onload = function () {
+
+var trainers = request.response;
+console.log(trainers);
+}
+    </script>
+<form onsubmit = "return Validationn()" action = "data.js">
+<input type="text" placeholder="Enter Name" name="name"><br>
+</form>
+<input type = "submit">
+</input>
+</body>
+</html>

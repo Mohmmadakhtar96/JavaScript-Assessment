@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <h1> Entry Form </h1>
+    </head>
+
+    <body>
+      <script>
+      function Validationn(){
+      var element1 = document.getElementById("name");
+      var element2 = document.getElementById("dob");
+      var element3 = document.getElementById("address");
+      var element4 = document.getElementById("pcode");
+      var element5 = document.getElementById("email");
+
+      var Namee = /^[a-zA-Z]+$/;
+      var DateOB = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+      var Add = /^^\d+\s[A-z]+\s[A-z]+/g;
+      var postcode = /[A-Z]{1,2}[0-9][0-9A-Z]?\s?[0-9][A-Z]{2}/gi;
+      var Email = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6}$/;
+if (element1.value == ""){
+alert("Name is Empty").focus();
+return false;
+}
+if (!(element1.value.match(Namee))){
+alert("Not a name");
+return false;
+}
+if (element2.value == ""){
+alert("Date of Birth is Empty");
+return false;
+}
+if (!(element2.value.match(DateOB))){
+alert("Not a Date of Birth");
+return false;
+}
+if (element3.value == ""){
+  alert("Address is Empty");
+  return false;
+}
+if (!(element3.value.match(Add))){
+alert("Address Not valid");
+return false;
+}
+if (element4.value == ""){
+  alert("Postcode is Empty");
+  return false;
+}
+if (!(element4.value.match(postcode))){
+alert("Not a Valid Postcode");
+return false;
+}
+if (element5.value == ""){
+  alert("Email is Empty");
+  return false;
+}
+if (!(element5.value.match(Email))){
+alert("Not Valid Email");
+return false;
+}
+localStorage.setItem("name", element1.value);
+localStorage.setItem("dob", element2. value);
+localStorage.setItem("address", element3.value);
+localStorage.setItem("pcode", element4.value);
+localStorage.setItem("email", element5.value);
+}
+
+
+      </script>
+
+<form onsubmit = "return Validationn()" action = "Formdata.html">
+  Name:<br>
+  <input type="text" placeholder="Json" name="Name" input id="name"><br>
+  Date of Birth:<br>
+<input type="text" placeholder="10-10-1010" name="DateOfBirth" input id="dob"><br>
+ Address:<br>
+<input type="text" placeholder="12 Bridge Street" name="ADD" input id="address"><br>
+ PostCode:<br>
+<input type="text" placeholder="M50 2BB" name="PostCode" input id="pcode"><br>
+Email:<br>
+  <input type="text"  placeholder="json@hotmail.com" name="email" input id="email"><br>
+<input type = "submit">
+</input>
+
+</form>
+</body>
+</html>
